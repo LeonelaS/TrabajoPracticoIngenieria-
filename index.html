@@ -12,22 +12,29 @@
 </head>
 
 <body>
-  <div id="map-container">
-    
-    <!-- Div de panel-->
-    <div id="panel">
+  <div id="busqueda-container">
+    <!-- Div de panel de búsqueda -->
+    <div id="panel-busqueda">
         <!-- Botón de Búsqueda -->
-      <div>
+      <div class="barra-de-busqueda">
         <input type="text" id="search-input" placeholder="Ingrese una dirección">
         <button id="boton-buscar" onclick="buscarDireccion()">Buscar</button>
       </div>
+    </div>
+  </div>
 
+  <div id="registro-container">
+    <!-- Div de panel de registro -->
+    <div id="panel-registro">
       <!-- Titulo y contenido de panel de registro -->
       <h2 class="titulo-panel-registro-colaborador">Panel de Registro de Colaborador</h2>
     </div>
+  </div>
 
+  <div id="map-container">
     <!-- Div para contener el mapa -->
-    <div id="map"></div>
+    <div id="map">
+    </div>
   </div>
 
   <!-- Incluir los archivos JS de Leaflet -->
