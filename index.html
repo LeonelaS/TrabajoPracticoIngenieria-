@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini-Emprendimientos</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+
+<body>
+  <div id="map-container">
+    
+    <!-- Div de panel-->
+    <div id="panel">
+        <!-- Botón de Búsqueda -->
+      <div>
+        <input type="text" id="search-input" placeholder="Ingrese una dirección">
+        <button id="boton-buscar" onclick="buscarDireccion()">Buscar</button>
+      </div>
+
+      <!-- Titulo y contenido de panel de registro -->
+      <h2 class="titulo-panel-registro-colaborador">Panel de Registro de Colaborador</h2>
+    </div>
+
+    <!-- Div para contener el mapa -->
+    <div id="map"></div>
+  </div>
+
+  <!-- Incluir los archivos JS de Leaflet -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>

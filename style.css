@@ -1,0 +1,29 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #map-container {
+    display: flex;
+    height: 100%;
+  }
+  
+  #panel {
+    flex: 0 0 35%;
+    background-color: #9b9bd3;
+    padding: 20px;
+  }
+
+  #panel .titulo-panel-registro-colaborador {
+    text-align: center;
+    background-color: blanchedalmond;
+    text-shadow: #3b3b50;
+    font-style: italic;
+    font-size: xx-large;
+}
+
+  #map {
+    flex: 1;
+  }
+  
