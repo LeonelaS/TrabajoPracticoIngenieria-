@@ -45,37 +45,36 @@ html {
 }
 
 #registro-container{
+  display: flex;
   height: 80%;  /* por los 80 de alto del mapa */
   width: 30%;   /* por los 30 de ancho del mapa */
 }
 
 #panel-registro{
-  display: flex;
-  justify-content: center;
+  padding-top: 1px;
   background-color: #5858b1;
   height: 100%;
   width: 100%;
 }
 
 #panel-registro .titulo-panel-registro-colaborador {
-  padding-top: 30px;
   background-color: rgb(172, 48, 48);
   font-style: italic;
-  font-size: x-large;
   color:#19191a;
-  width: 100%;
-  height: 20%;
-  user-select: none;
+  width: 85%;
+  padding: 10px 20px; /* ajusta el espacio alrededor del texto */
+  border-radius: 10px; /* añade bordes redondeados */
+  user-select: none; /* por error del navegador, aparece para escribir en lugares que no deberia */
 }
 
 #formulario-container {
-  flex: 1;
+  height: 100%;
   width: 100%;
 }
 
 #formulario-registro {
   width: 100%; /* Ancho del formulario */
-  max-width: 100px; /* Ancho máximo para asegurar que el formulario no se extienda demasiado */
+  max-width: 150px; /* Ancho máximo para asegurar que el formulario no se extienda demasiado */
 }
 
 /* Ajustes de estilo para los campos del formulario */
