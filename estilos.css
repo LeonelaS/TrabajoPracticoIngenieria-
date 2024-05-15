@@ -8,6 +8,13 @@ header {
   height: 200px;
 }
 
-.barraBusqueda{
-    
+.barraBusqueda {
+  position: fixed;
+  left: 500px;
+  transform: translateY(-100px);
+
+  display: flex;
+  background-color: transparent;
+  border-bottom: 1px white;
+  padding: 10px;
 }
