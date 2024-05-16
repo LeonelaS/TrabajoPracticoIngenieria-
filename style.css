@@ -47,7 +47,6 @@ html {
   font-size: x-large;
   padding: 5px 10px; /* Ajusta el espacio alrededor del texto */
   border-radius: 10px; /* Añade bordes redondeados */
-  user-select: none;
 }
 
 #registro-container{
