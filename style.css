@@ -6,28 +6,33 @@ html {
   /* overflow: hidden; */
 }
 
-#map-container{
-  flex: 1;
-  height: 100%;
+#map-container {
+  height: 100%; 
   width: 100%;
 }
 
 #map {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  height: 80%;
-  width: 70%;
+  bottom: 80%;
+  left: 30%;
+  height: 80%; /* El mapa ocupa el 100% menos el 20% ocupado por #busqueda-container */
+  width: 70%; /* El mapa ocupa el 70% menos el 30% de margen izquierdo */
 }
 
 #busqueda-container {
-  flex-direction: column;
+  position: absolute;
+  top: 0;
+  margin-left: 30%;
+  padding-bottom: 20px;
   height: 20%;
-  width: 100%;
+  width: 70%;
 }
 
 #panel-busqueda{
-  background-color: #9b9bd3;
+  background: #0281b0;
+  background: -moz-linear-gradient(top, #1399cb, #128cba 50%, #0188bb 51%, #007caa);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #1499ca), color-stop(.5, #128cba), color-stop(.5, #0188bb), to(#007caa)); 
+  border: 1px solid #57a9cf;
+  border-top: 1px solid #cedee4;
   height: 100%;
   width: 100%;
   display: flex;
@@ -46,13 +51,12 @@ html {
 }
 
 #registro-container{
-  height: 80%;
+  height: 100%;
   width: 30%;
 }
 
 #panel-registro{
   display: flex;
-  justify-content: center;
   background-color: #5858b1;
   height: 100%;
   width: 100%;
@@ -67,5 +71,48 @@ html {
   color:#19191a;
   width: 100%;
   height: 10%;
+  user-select: none;
+}
+
+#formulario-colaborador {
+  position: absolute;
+  margin-top: 10%;
+  width: 80%;
+  height: 90%;
+  color: #bd9d61;
+  font-style: italic;
+  font-size: medium;
+  user-select: none;
+}
+
+#formulario-colaborador label {
+  display: flex;
+  margin-bottom: 10px;
+  margin-left: 1%;
+  max-width: 400px;
+  user-select: none;
+}
+
+#formulario-colaborador input[type="text"],
+#formulario-colaborador input[type="email"],
+#formulario-colaborador input[type="tel"],
+#formulario-colaborador input[type="time"],
+#formulario-colaborador select {
+  margin-left: 4%;
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+  max-width: 250px;
+}
+
+#formulario-colaborador input[type="submit"] {
+  margin-left: 8%;
+  width: 20%;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
   user-select: none;
 }
