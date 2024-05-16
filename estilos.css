@@ -18,3 +18,8 @@ header {
   border-bottom: 1px white;
   padding: 10px;
 }
+
+.panel-direcciones{
+  position: absolute;
+  top: 50%;
+}
