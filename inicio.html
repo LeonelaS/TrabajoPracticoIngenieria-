@@ -7,33 +7,56 @@
     <meta name="viewport" content="width= device-width, initial-scale=1.0" />
     <title>Emprendidos</title>
     <link rel="stylesheet" href="estilos.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
     <header>
       <img
-        class="logoI"
+        class="logoInicio"
         src="imagenes/Logo.png"
         alt="Logo del sitio web emprendidos"
       />
+      <div class="BarraBusqueda">
+        <form>
+          <input
+            class="estiloBarraBusqueda"
+            type="search"
+            placeholder="Buscar emprendimiento... "
+            name="buscar"
+          />
+          <button class="botonBuscar" type="submit">Buscar</button>
+        </form>
+      </div>
 
-      <form>
-        <input class=""
-          type="text"
-          placeholder="Buscar emprendimiento... "
-          name="buscar"
-        />
-        <button type="submit">Buscar</button>
-      </form>
-
-      <form>
-        <label for="perfil"></label>
-        <select name="mi perfil" id="perfil">
-          <option disabled selected>Mi perfil</option>
-          <option>Iniciar sesión</option>
-          <option>Registrarse</option>
-        </select>
-      </form>
+      <div class="botonesUsuario">
+        <form>
+          <button class="estiloBotones">Iniciar sesión</button>
+          <button class="estiloBotones">Registrate</button>
+        </form>
+      </div>
     </header>
+
+    <article></article>
+
+    <footer class="piePagina">
+      <img
+        class="logoPiePagina"
+        src="Imagenes/LogoFooter.png"
+        alt="logo del sitio"
+      />
+      <div class="textoFooter">
+        <ul>
+          <li>Inicio</li>
+          <li>Nosotros</li>
+          <li>Contacto</li>
+        </ul>
+      </div>
+    </footer>
   </body>
 </html>

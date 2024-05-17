@@ -1,20 +1,80 @@
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Lora", sans-serif;
+  background-color: #070f2b;
+}
+
 header {
-  background-color: #5d0e41;
-  height: 200px;
-}
-
-.logoI {
-  width: 250px;
-  height: 200px;
-}
-
-.barraBusqueda {
   position: fixed;
-  left: 500px;
-  transform: translateY(-100px);
+  background-color: #5d0e41;
+  width: 100%;
+  height: 100px;
+}
 
+.logoInicio {
+  width: 150px;
+  height: 100px;
+}
+
+.BarraBusqueda {
   display: flex;
-  background-color: transparent;
-  border-bottom: 1px white;
-  padding: 10px;
+  justify-content: center;
+  position: relative;
+  top: -100px;
+  margin-top: 10px;
+}
+
+.estiloBarraBusqueda {
+  border-radius: 10px;
+  width: 300px;
+  height: 35px;
+}
+
+.botonBuscar {
+  border-radius: 10px;
+}
+
+.botonesUsuario {
+  display: flex;
+  justify-content: right;
+  position: relative;
+  top: -130px;
+  right: 50px;
+}
+
+.estiloBotones {
+  border-radius: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
+  width: 100px;
+  height: 40px;
+  background-color: aliceblue;
+}
+
+.piePagina {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+
+  background-color: #22092c;
+  padinng: 10px;
+}
+
+.logoPiePagina {
+  width: 150px;
+  height: 100px;
+  position: fixed;
+}
+
+.textoFooter {
+  position: fixed;
+  left: 200px;
+  font-family: "Lora" sans-serif;
+  color: aliceblue;
+  font-weight: 400px;
+  font-size: 15px;
 }
