@@ -78,3 +78,8 @@ header {
   font-weight: 400px;
   font-size: 15px;
 }
+
+.panel-direcciones{
+  position: absolute;
+  top: 50%;
+}
