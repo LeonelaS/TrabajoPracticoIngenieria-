@@ -6,28 +6,33 @@ html {
   /* overflow: hidden; */
 }
 
-#map-container{
-  flex: 1;
-  height: 100%;
+#map-container {
+  height: 100%; 
   width: 100%;
 }
 
 #map {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  height: 80%;
-  width: 70%;
+  bottom: 80%;
+  left: 30%;
+  height: 80%; /* El mapa ocupa el 100% menos el 20% ocupado por #busqueda-container */
+  width: 70%; /* El mapa ocupa el 70% menos el 30% de margen izquierdo */
 }
 
 #busqueda-container {
-  flex-direction: column;
+  position: absolute;
+  top: 0;
+  margin-left: 30%;
+  padding-bottom: 20px;
   height: 20%;
   width: 70%;
 }
 
 #panel-busqueda{
-  background-color: #9b9bd3;
+  background: #0281b0;
+  background: -moz-linear-gradient(top, #1399cb, #128cba 50%, #0188bb 51%, #007caa);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #1499ca), color-stop(.5, #128cba), color-stop(.5, #0188bb), to(#007caa)); 
+  border: 1px solid #57a9cf;
+  border-top: 1px solid #cedee4;
   height: 100%;
   width: 100%;
   display: flex;
@@ -35,78 +40,37 @@ html {
   align-items: center;
 }
 
-#panel-busqueda .barra-de-busqueda { /* datos de la barrita de busqueda */
+#panel-busqueda .barra-de-busqueda {
   background-color: blanchedalmond;
   text-shadow: #3b3b50;
   font-style: italic;
   font-size: x-large;
   padding: 5px 10px; /* Ajusta el espacio alrededor del texto */
   border-radius: 10px; /* Añade bordes redondeados */
-  user-select: none;
 }
 
 #registro-container{
-  height: 80%;
+  height: 100%;
   width: 30%;
 }
 
 #panel-registro{
   display: flex;
-  justify-content: center;
   background-color: #5858b1;
   height: 100%;
   width: 100%;
 }
 
 #panel-registro .titulo-panel-registro-colaborador {
+  text-align: center;
+  padding-top: 30px;
   background-color: rgb(172, 48, 48);
   font-style: italic;
+  font-size: x-large;
   color:#19191a;
-  width: 85%;
-  padding: 10px 20px; /* ajusta el espacio alrededor del texto */
-  border-radius: 10px; /* añade bordes redondeados */
-  user-select: none; /* por error del navegador, aparece para escribir en lugares que no deberia */
-}
-
-#formulario-container {
-  height: 100%;
   width: 100%;
-}
-
-#formulario-registro {
-  width: 100%; /* Ancho del formulario */
-  max-width: 150px; /* Ancho máximo para asegurar que el formulario no se extienda demasiado */
-}
-
-/* Ajustes de estilo para los campos del formulario */
-#formulario-registro label {
-  margin-bottom: 10px;
-}
-
-#formulario-registro input,
-#formulario-registro select,
-#formulario-registro textarea {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box;
-}
-
-#formulario-registro button {
-  width: 100%;
-  padding: 10px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-#formulario-registro button:hover {
-  background-color: #45a049;
+  height: 10%;
+  user-select: none;
 }
 
 #formulario-colaborador {

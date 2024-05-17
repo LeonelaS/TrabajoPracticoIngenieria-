@@ -15,73 +15,75 @@ L.marker([-34.523013308639, -58.70045616768699]).addTo(map)
 
 
 // este funciona, pero se solapa con las demas y no termina eligiendo ninguna.
-// function normalizarDireccion() {
-//     // Obtener la dirección ingresada por el usuario
-//     var direccion = document.getElementById('direccionSinNormalizar').value;
-//     console.log("direcicon base obtenida");
-
-//     // URL de la API de normalización de direcciones de USIG
-//     var apiUrl = 'http://servicios.usig.buenosaires.gob.ar/normalizar?direccion=' + encodeURIComponent(direccion);
-//     console.log("URL api usig obtenida::::" + apiUrl);
-
-//     // Realizar la solicitud HTTP a la API
-//     fetch(apiUrl)
-//         .then(response => {
-//             console.log("entrando a realizar la solicitud http a la api");
-//             if (!response.ok) {
-//                 console.log("imposible realizar solicitud");
-//                 throw new Error('No se pudo realizar la solicitud');
-//             }
-//             console.log("devolviendo respuesta de la api");
-//             return response.json();
-//         })
-//         .then(data => {
-//             console.log("procesando respuesta de la api");
-//             // Procesar la respuesta de la API para obtener la dirección normalizada
-//             var direccionNormalizada = data.direccion;
-//             console.log("respuessta de la api obtenida");
-
-//             // Actualizar el campo de texto con la dirección normalizada
-//             document.getElementById('direccionNormalizada').value = direccionNormalizada;
-//             console.log("actualizando el campo de direccion con la normalizada");
-//         })
-//         .catch(error => {
-//             // Manejar errores de la solicitud
-//             console.error('Error al normalizar la dirección:', error);
-//             alert('Hubo un error al normalizar la dirección. Por favor, inténtalo de nuevo más tarde.');
-//         });
-// }
-
 function normalizarDireccion() {
+    // Obtener la dirección ingresada por el usuario
     var direccion = document.getElementById('direccionSinNormalizar').value;
-    var apiUrl = 'http://servicios.usig.buenosaires.gob.ar/normalizar?direccion=' + encodeURIComponent(direccion);
+    console.log("direcicon base obtenida");
 
+    // URL de la API de normalización de direcciones de USIG
+    var apiUrl = 'http://servicios.usig.buenosaires.gob.ar/normalizar?direccion=' + encodeURIComponent(direccion);
+    console.log("URL api usig obtenida::::" + apiUrl);
+
+    // Realizar la solicitud HTTP a la API
     fetch(apiUrl)
         .then(response => {
+            console.log("entrando a realizar la solicitud http a la api");
             if (!response.ok) {
-                throw new Error('Error al normalizar la dirección');
+                console.log("imposible realizar solicitud");
+                throw new Error('No se pudo realizar la solicitud');
             }
+            console.log("devolviendo respuesta de la api");
             return response.json();
         })
         .then(data => {
-            // Limpiar resultados anteriores
-            document.getElementById('direccionesNormalizadas').innerHTML = '';
+            console.log("procesando respuesta de la api");
+            // Procesar la respuesta de la API para obtener la dirección normalizada
+            var direccionNormalizada = data.direccion;
+            console.log("respuessta de la api obtenida");
 
-            // Verificar si hay una propiedad en los datos que contiene la lista de direcciones
-            if (data && data.resultados && Array.isArray(data.resultados)) {
-                // Iterar sobre la lista de direcciones normalizadas
-                data.resultados.forEach(resultado => {
-                    var option = document.createElement('option');
-                    option.value = resultado.direccion;
-                    option.text = resultado.direccion;
-                    document.getElementById('direccionesNormalizadas').appendChild(option);
-                });
-            } else {
-                throw new Error('Respuesta de la API inesperada');
-            }
+            // Actualizar el campo de texto con la dirección normalizada
+            document.getElementById('direccionNormalizada').value = direccionNormalizada;
+            console.log("actualizando el campo de direccion con la normalizada");
         })
         .catch(error => {
-            console.error('Error:', error);
+            // Manejar errores de la solicitud
+            console.error('Error al normalizar la dirección:', error);
             alert('Hubo un error al normalizar la dirección. Por favor, inténtalo de nuevo más tarde.');
         });
 }
+
+
+
+// function normalizarDireccion() {
+//     var direccion = document.getElementById('direccionSinNormalizar').value;
+//     var apiUrl = 'http://servicios.usig.buenosaires.gob.ar/normalizar?direccion=' + encodeURIComponent(direccion);
+
+//     fetch(apiUrl)
+//         .then(response => {
+//             if (!response.ok) {
+//                 throw new Error('Error al normalizar la dirección');
+//             }
+//             return response.json();
+//         })
+//         .then(data => {
+//             // Limpiar resultados anteriores
+//             document.getElementById('direccionesNormalizadas').innerHTML = '';
+
+//             // Verificar si hay una propiedad en los datos que contiene la lista de direcciones
+//             if (data && data.resultados && Array.isArray(data.resultados)) {
+//                 // Iterar sobre la lista de direcciones normalizadas
+//                 data.resultados.forEach(resultado => {
+//                     var option = document.createElement('option');
+//                     option.value = resultado.direccion;
+//                     option.text = resultado.direccion;
+//                     document.getElementById('direccionesNormalizadas').appendChild(option);
+//                 });
+//             } else {
+//                 throw new Error('Respuesta de la API inesperada');
+//             }
+//         })
+//         .catch(error => {
+//             console.error('Error:', error);
+//             alert('Hubo un error al normalizar la dirección. Por favor, inténtalo de nuevo más tarde.');
+//         });
+// }
