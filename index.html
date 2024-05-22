@@ -95,6 +95,9 @@
         </label>
         <input type="text" id="search-input" placeholder="Ingrese una dirección">
         <button id="boton-buscar" onclick="buscarDireccion()">Buscar</button>
+        <select id="direccionBuscadaNormalizada" name="direccionBuscadaNormalizada">
+          <option value="">Seleccione una dirección</option>
+        </select><br>
       </div>
     </div>
   </div>
@@ -114,9 +117,10 @@
     type="text/javascript"></script>
 
   <!-- Incluir mis scripts.js -->
-  <script src="script.js"></script>
+  <script src="normalizador.js"></script>
   <script src="mapa.js"></script>
   <script src="talleres.js"></script>
+  <script src="buscadorDireccion.js"></script>
 </body>
 
 </html>
