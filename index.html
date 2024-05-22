@@ -44,7 +44,7 @@
         <input type="text" id="direccionSinNormalizar" placeholder="Buscar dirección" name="buscarDireccion"><br>
         <button type="button" id="normalizar" onclick="normalizarDireccion()">Normalizar</button><br>
         <label for="direccionNormalizada">Dirección normalizada</label><br>
-        <select id="direccionNormalizada" name="direccionNormalizada">
+        <select id="direccionNormalizada" name="direccionNormalizada" onchange="mostrarDireccionEnMapa()">
           <option value="">Seleccione una dirección</option>
         </select><br>
 
@@ -115,6 +115,8 @@
 
   <!-- Incluir mis scripts.js -->
   <script src="script.js"></script>
+  <script src="mapa.js"></script>
+  <script src="talleres.js"></script>
 </body>
 
 </html>
