@@ -1,3 +1,4 @@
+// para agregar a mano en la búsqueda.
 var talleres_fisicos = [
     // FORMATO GENERAL:
     // "altura": null,
@@ -24,6 +25,30 @@ var talleres_fisicos = [
         "nombre": "Estadio de San Miguel",
         "descripcion": "Trueno verde stadium.",
         "lugar": "Los Polvorines"
+    }
+]
+
+// para usarlas en la normalización.
+var direcciones_aptas = [
+    {
+        "nombre": "Mariano Sánchez de Loria",
+        "altura": [300], 
+        "partido": "Lomas de Zamora"
+    },
+    {
+        "nombre": "Salta",
+        "altura": 400, 
+        "partido": "Gerli"
+    },
+    {
+        "nombre": "Conesa",
+        "altura": 800,
+        "partido": "San Miguel"
+    },
+    {
+        "nombre": "Belgrano Av.",
+        "altura": 800,
+        "partido": "CABA"
     }
 ]
 
