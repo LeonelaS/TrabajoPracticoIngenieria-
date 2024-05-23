@@ -24,21 +24,18 @@
       <!-- Formulario de registro -->
       <form id="formulario-colaborador">
         <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" required><br>
+        <!-- <input type="text" id="nombre" name="nombre" required><br> -->
+        <input type="text" id="nombre" name="nombre"><br>
 
         <label for="telefono">Teléfono:</label>
-        <input type="tel" id="telefono" name="telefono" required><br>
+        <input type="tel" id="telefono" name="telefono"><br>
 
         <label for="email">Correo Electrónico:</label>
-        <input type="email" id="email" name="email" required><br>
+        <input type="email" id="email" name="email"><br>
 
         <label for="horario">Horario de atención: Desde / Hasta</label>
         <input type="time" id="horario" name="horario"><br>
         <input type="time" id="horario" name="horario"><br>
-
-        <!-- <label for="direccion">Dirección:</label>
-        <input type="text" id="direccion" name="direccion"><br>
-        <button type="button" id="normalizar" onclick="normalizarDireccion()">Normalizar Dirección</button><br> -->
 
         <label for="direccion">Dirección sin normalizar</label><br>
         <input type="text" id="direccionSinNormalizar" placeholder="Buscar dirección" name="buscarDireccion"><br>
@@ -50,6 +47,7 @@
 
         <label for="comercio">¿Posee comercio físico?</label>
         <select id="comercio" name="comercio">
+          <option value="">Seleccione una opción</option>"
           <option value="si">Sí</option>
           <option value="no">No</option>
         </select><br>
@@ -66,6 +64,7 @@
         <!-- Selector de Emprendimiento Virtual -->
         <label for="emprendimiento">¿Tiene un emprendimiento virtual?</label>
         <select id="emprendimiento" name="emprendimiento">
+          <option value="">Seleccione una opción</option>"
           <option value="si">Sí</option>
           <option value="no">No</option>
         </select><br>
@@ -76,13 +75,14 @@
           <input type="text" id="nombre-emprendimiento" name="nombre-emprendimiento"><br>
 
           <label for="descripcion">Descripción:</label>
-          <textarea id="descripcion" name="descripcion"></textarea><br>
+          <input type="text" id="descripcion" name="descripcion"></input><br>
         </div>
 
         <!-- Otros campos de datos del colaborador -->
 
         <input type="submit" value="Registrar">
       </form>
+      <div id="registro"></div>
     </div>
   </div>
 
@@ -91,8 +91,6 @@
     <div id="panel-busqueda">
       <!-- Botón de Búsqueda -->
       <div class="barra-de-busqueda">
-        <label>Av. Maipú 3850
-        </label>
         <input type="text" id="search-input" placeholder="Ingrese una dirección">
         <button id="boton-buscar" onclick="buscarDireccion()">Buscar</button>
         <select id="direccionBuscadaNormalizada" name="direccionBuscadaNormalizada">
@@ -122,6 +120,7 @@
   <script src="mapa.js"></script>
   <script src="talleres.js"></script>
   <script src="buscadorDireccion.js"></script>
+  <script src="registrar.js"></script>
 </body>
 
 </html>
