@@ -86,7 +86,7 @@ html {
 
 #formulario-colaborador label {
   display: flex;
-  margin-bottom: 10px;
+  margin-bottom: 1px;
   margin-left: 1%;
   max-width: 400px;
   user-select: none;
@@ -97,15 +97,21 @@ html {
 #formulario-colaborador input[type="tel"],
 #formulario-colaborador input[type="time"],
 #formulario-colaborador select {
-  margin-left: 4%;
+  margin-left: 1%;
   width: 100%;
-  padding: 5px;
-  margin-bottom: 10px;
-  max-width: 250px;
+  padding: 2px;
+  margin-bottom: 5px;
+  max-width: 200px;
+}
+
+#formulario-colaborador button[type="button"] {
+  margin-left: 2%;
+  padding: 1px;
 }
 
 #formulario-colaborador input[type="submit"] {
   margin-left: 8%;
+  margin-top: 5%;
   width: 20%;
   padding: 10px;
   background-color: #4CAF50;
@@ -114,4 +120,22 @@ html {
   border-radius: 5px;
   cursor: pointer;
   user-select: none;
+}
+
+#registro {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #4CAF50; /* Color de fondo */
+  color: white; /* Color del texto */
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #cedee4;
+  text-align: center;
+  z-index: 1000; /* Para asegurarse de que esté por encima de otros elementos */
+  display: none; /* Oculto por defecto */
+  margin-top: 20px;
 }
