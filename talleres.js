@@ -14,10 +14,10 @@ var talleres_fisicos = [
 
     {
         "id": 1,
-        "nombre": "Terrazas de Mayo",
-        "posicion": [-34.53138840321933, -58.703033188918184],
-        "direccion": "Av. Gral. Juan Gregorio Lemos 101",
-        "descripcion": "Paseo con la familia."
+        "nombre": "Universidad Nacional de General Sarmiento",
+        "posicion": [-34.523013308639, -58.70045616768699],
+        "lugar": "Los Polvorines",
+        "descripcion": "Zona de estudios y aprendizaje."
     },
     {
         "id": 2,
@@ -25,6 +25,13 @@ var talleres_fisicos = [
         "nombre": "Estadio de San Miguel",
         "descripcion": "Trueno verde stadium.",
         "lugar": "Los Polvorines"
+    },
+    {
+        "id": 3,
+        "nombre": "Terrazas de Mayo",
+        "posicion": [-34.53138840321933, -58.703033188918184],
+        "direccion": "Av. Gral. Juan Gregorio Lemos 101",
+        "descripcion": "Paseo con la familia."
     }
 ]
 

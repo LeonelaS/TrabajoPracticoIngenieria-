@@ -1,8 +1,8 @@
 // este funciona, y procesa todas las opciones para pasarselas al html en un arreglo.
 // pero al elegir alguna opcion no pasa nada.
-function buscarDireccion() {
+function buscarDireccionComercio() {
     // Obtener la dirección ingresada por el usuario
-    var direccion = document.getElementById('search-input').value;
+    var direccion = document.getElementById('direccion-taller-comercio').value;
     console.log("direcicon base obtenida");
 
     // URL de la API de normalización de direcciones de USIG
@@ -18,7 +18,7 @@ function buscarDireccion() {
             var direcciones = data.direccionesNormalizadas; // Ajusta esto según la estructura de la respuesta de la API
 
             if (direcciones && direcciones.length > 0) {
-                var select = document.getElementById('direccionBuscadaNormalizada');
+                var select = document.getElementById('direccionComercioNormalizado');
                 select.innerHTML = ''; // Limpiar opciones anteriores
 
                 console.log("devolviendo respuesta de la api para elegir de las opciones");

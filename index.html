@@ -56,10 +56,22 @@
         <div id="campos-comercio" style="display: none;">
           <label for="nombre-comercio">Nombre del Comercio:</label>
           <input type="text" id="nombre-comercio" name="nombre-comercio"><br>
-
+          
           <label for="direccion-comercio">Dirección del Comercio:</label>
-          <input type="text" id="direccion-comercio" name="direccion-comercio"><br>
+          <input type="text" id="direccion-taller-comercio" placeholder="Ingrese una dirección">
+          <button id="boton-buscar-comercio" onclick="buscarDireccionComercio()">Buscar Comercio</button><br>
+          <select id="direccionComercioNormalizado" name="direccionComercioNormalizado">
+            <option value="">Seleccione una dirección</option>
+          </select>
+          <button type="button" id="mostrar-direccion" onclick="mostrarDireccionEnMapa()">Mostrar dirección de Comercio</button><br>
         </div>
+
+        <!-- <input type="text" id="search-input" placeholder="Ingrese una dirección">
+        <button id="boton-buscar" onclick="buscarDireccion()">Buscar</button>
+        <select id="direccionBuscadaNormalizada" name="direccionBuscadaNormalizada">
+          <option value="">Seleccione una dirección</option>
+        </select><br>
+        <button type="button" id="mostrar-direccion" onclick="mostrarDireccionEnMapa()">Mostrar dirección</button><br> -->
 
         <!-- Selector de Emprendimiento Virtual -->
         <label for="emprendimiento">¿Tiene un emprendimiento virtual?</label>
@@ -91,12 +103,12 @@
     <div id="panel-busqueda">
       <!-- Botón de Búsqueda -->
       <div class="barra-de-busqueda">
-        <input type="text" id="search-input" placeholder="Ingrese una dirección">
+        <!-- <input type="text" id="search-input" placeholder="Ingrese una dirección">
         <button id="boton-buscar" onclick="buscarDireccion()">Buscar</button>
         <select id="direccionBuscadaNormalizada" name="direccionBuscadaNormalizada">
           <option value="">Seleccione una dirección</option>
         </select><br>
-        <button type="button" id="mostrar-direccion" onclick="mostrarDireccionEnMapa()">Mostrar dirección</button><br>
+        <button type="button" id="mostrar-direccion" onclick="mostrarDireccionEnMapa()">Mostrar dirección</button><br> -->
       </div>
     </div>
   </div>
