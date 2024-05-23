@@ -44,7 +44,7 @@
         <input type="text" id="direccionSinNormalizar" placeholder="Buscar dirección" name="buscarDireccion"><br>
         <button type="button" id="normalizar" onclick="normalizarDireccion()">Normalizar</button><br>
         <label for="direccionNormalizada">Dirección normalizada</label><br>
-        <select id="direccionNormalizada" name="direccionNormalizada" onchange="mostrarDireccionEnMapa()">
+        <select id="direccionNormalizada" name="direccionNormalizada">
           <option value="">Seleccione una dirección</option>
         </select><br>
 
@@ -98,6 +98,7 @@
         <select id="direccionBuscadaNormalizada" name="direccionBuscadaNormalizada">
           <option value="">Seleccione una dirección</option>
         </select><br>
+        <button type="button" id="mostrar-direccion" onclick="mostrarDireccionEnMapa()">Mostrar dirección</button><br>
       </div>
     </div>
   </div>
