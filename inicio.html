@@ -16,46 +16,122 @@
   </head>
 
   <body>
-    <header>
+    
       <img
         class="logoInicio"
-        src="imagenes/Logo.png"
+        src="imagenes/Emprendidos.png"
         alt="Logo del sitio web emprendidos"
       />
-      <div class="BarraBusqueda">
+      <div class="busqueda">
         <form>
           <input
-            class="estiloBarraBusqueda"
+            class="estiloBarra"
             type="search"
             placeholder="Buscar emprendimiento... "
             name="buscar"
           />
-          <button class="botonBuscar" type="submit">Buscar</button>
+          <button class="estiloBoton" type="submit">Buscar</button>
         </form>
       </div>
 
-      <div class="botonesUsuario">
+      <div class="botones">
         <form>
-          <button class="estiloBotones">Iniciar sesión</button>
-          <button class="estiloBotones">Registrate</button>
+          <a class="estiloBoton" href="login.html">
+            Iniciar sesión
+          </a>
+          <button class="estiloBoton">Registrate</button>
         </form>
+      </div>
+
+      <div class="desplegable">
+        <select class="estiloDesplegable" name="Rubros">
+          <option value="" disabled selected hidden>Rubros</option>
+          <option>Comida</option>
+          <option>Ropa</option>
+          <option>Muebles</option>
+          <option>Ceramica</option>
+          <option>Artesanías</option>
+          <option>Papelería</option>
+          <option>Belleza</option>
+          <option>Higiene</option>
+        </select>
       </div>
     </header>
 
-    <article></article>
+    <article>
+      <div class="presentacion">
+
+        <h2>Nosotros</h2>
+      <br>
+      <p class="textoEstilo">“¡Bienvenidos a Emprendidos! Somos la red social diseñada exclusivamente para emprendedores. Publica tus proyectos, comparte tu historia y conéctate con otros apasionados por el mundo del emprendimiento. ¡Hagamos que tus ideas brillen juntas!”</p>
+
+      </div>
+
+      <h2>Algunos emprendimientos destacados</h2>
+
+      <div class="contenedor">
+
+        <div class="item">
+          <figure>
+            <img class="imgItem" src="Imagenes/Papelería bonita 🤩.jpg" alt="comercio">
+          </figure>
+          <div class="infoComercio">
+            <h5>Papelera H&H</h5>
+            <img class="destacado" src="Imagenes/Destacado.png" alt="insigniaDestacado">
+          </div>
+        </div>
+
+      <div class="item">
+        <figure>
+          <img class="imgItem" src="Imagenes/comercio.jpg" alt="comercio">
+        </figure>
+        <div class="infoComercio">
+          <h5>Almacen Libre G</h5>
+          <img class="destacado" src="Imagenes/Destacado.png" alt="insigniaDestacado">
+        </div>
+      </div>
+
+      <div class="item">
+        <figure>
+          <img class="imgItem" src="Imagenes/empanadas.jpg" alt="comida">
+        </figure>
+        <div class="infoComercio">
+          <h5>Empanadas Criollitas</h5>
+          <img class="destacado" src="Imagenes/Destacado.png" alt="insigniaDestacado">
+        </div>
+      </div>
+
+      <div class="item">
+        <figure>
+          <img class="imgItem" src="Imagenes/uñas.jpg" alt="uñas postizas">
+        </figure>
+        <div class="infoComercio">
+          <h5>Nail art</h5>
+          <img class="destacado" src="Imagenes/Destacado.png" alt="insigniaDestacado">
+        </div>
+      </div>
+
+      <div class="item">
+        <figure>
+          <img class="imgItem" src="Imagenes/ropa.jpg" alt="comercio de ropa">
+        </figure>
+        <div class="infoComercio">
+          <h5>Iconic</h5>
+          <img class="destacado" src="Imagenes/Destacado.png" alt="insigniaDestacado">
+        </div>
+      </div>
+
+     </div>
+      
+    </article>
 
     <footer class="piePagina">
-      <img
-        class="logoPiePagina"
-        src="Imagenes/LogoFooter.png"
-        alt="logo del sitio"
-      />
       <div class="textoFooter">
-        <ul>
-          <li>Inicio</li>
-          <li>Nosotros</li>
-          <li>Contacto</li>
-        </ul>
+        <a class="a">Inicio</a>
+        <a class="a">Nosotros</a>
+        <a class="a">Contacto</a>
+        <br />
+        <p>Derechos reservados &copy; 2024</p>
       </div>
     </footer>
   </body>
