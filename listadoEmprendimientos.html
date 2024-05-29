@@ -17,7 +17,7 @@
 
     <!-- Incluir los archivos JS de Leaflet -->
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script src="mapaDeEmprendimiento.js"></script>
+
     <script src="talleres.js"></script>
 
     <script>
@@ -35,7 +35,7 @@
                 nombre.textContent = emprendimiento.nombre;
 
                 const imagen = document.createElement('img');
-                imagen.src = "Imagenes/Papelería bonita 🤩.jpg";
+                imagen.src = emprendimiento.imagen_url;
 
                 const descripcion = document.createElement('p');
                 descripcion.textContent = `Descripción: ${emprendimiento.descripcion}`;
@@ -86,36 +86,17 @@
 
                     const mapDiv = document.createElement('div');
                     mapDiv.className = 'card-map';
-                    // mapDiv.id = `card-map-${emprendimiento.id}`;
-                    mapDiv.id = 'card-map';
+                    card.appendChild(mapDiv);
 
-                    // Inicializar mapa
-                    var mapa2 = L.map('map').setView([-34.523013308639, -58.70045616768699], 14); // Coordenadas de la Universidad Nacional de General Sarmiento
-
-                    // Añadir una capa de mapa base
+                    setTimeout( () => {const nuevomap = L.map(mapDiv).setView(emprendimiento.coordenadas, 14);
                     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
                         maxZoom: 19,
-                    }).addTo(mapa2);
+                    }).addTo(nuevomap);
 
-                    // Añadir un marcador
-                    L.marker([-34.523013308639, -58.70045616768699]).addTo(mapa2)
-                        .bindPopup('Universidad Nacional de General Sarmiento')
-                        .openPopup();
-
-                    card.appendChild(mapDiv);
-
-                    // setTimeout(() => {
-                    //     const mapa2 = L.map(mapDiv.id).setView(emprendimiento.posicion, 14);
-                    //     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                    //         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
-                    //         maxZoom: 19,
-                    //     }).addTo(mapa2);
-
-                    //     L.marker(emprendimiento.posicion).addTo(mapa2)
-                    //         .bindPopup(emprendimiento.nombre)
-                    //         .openPopup();
-                    // }, 1);
+                    L.marker(emprendimiento.coordenadas).addTo(nuevomap)
+                        .bindPopup(emprendimiento.nombre)
+                        .openPopup()}, 1)
                 }
 
                 contenedor.appendChild(card);
