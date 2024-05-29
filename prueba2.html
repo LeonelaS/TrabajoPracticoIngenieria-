@@ -1,0 +1,30 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+		<title>Leaflet offline map</title>
+		<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+	    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+        <style>
+            #map-container {
+            height: 100%; 
+            width: 100%;
+            }
+
+            #map {position: absolute; top: 0; bottom: 0; left: 0; right: 0; }
+        </style>
+	</head>
+	<body> 
+		<div id="map-container">
+            <!-- Div para contener el mapa -->
+            <div id="map">
+                <script>
+                    var map = L.map('map').setView([-34.523013308639, -58.70045616768699], 14);
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
+                        maxZoom: 19,
+                    }).addTo(map);
+                </script>
+            </div>
+        </div>
+	</body>
+</html>

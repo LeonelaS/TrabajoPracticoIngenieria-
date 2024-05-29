@@ -1,25 +1,25 @@
-// Inicializar el mapa
-var map = L.map('map').setView([-34.523013308639, -58.70045616768699], 14); // Coordenadas de la Universidad Nacional de General Sarmiento
+// // Inicializar el mapa
+// var map = L.map('map').setView([-34.523013308639, -58.70045616768699], 14); // Coordenadas de la Universidad Nacional de General Sarmiento
 
-// Añadir una capa de mapa base
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
-    maxZoom: 19,
-}).addTo(map);
+// // Añadir una capa de mapa base
+// L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+//     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
+//     maxZoom: 19,
+// }).addTo(map);
 
-// Añadir un marcador
-// L.marker([-34.523013308639, -58.70045616768699]).addTo(map)
-//     .bindPopup('Universidad Nacional de General Sarmiento')
-//     .openPopup();
+// // Añadir un marcador
+// // L.marker([-34.523013308639, -58.70045616768699]).addTo(map)
+// //     .bindPopup('Universidad Nacional de General Sarmiento')
+// //     .openPopup();
 
-// Variable global para almacenar el marcador actual
-var currentMarker;
+// // Variable global para almacenar el marcador actual
+// var currentMarker;
 
 
 // Función para geocodificar la dirección y mostrarla en el mapa
 // Esta funcion entra segunda despues de normalizar, para buscar las coordenadas en el mapa.
-function mostrarDireccionEnMapa() {
-    var direccion = document.getElementById('direccionComercioNormalizado').value;
+function mostrarDireccionEnMapa(map, direccion) {
+    // var direccion = document.getElementById('direccionComercioNormalizado').value;
 
     if (!direccion) {
         alert('Seleccione una dirección');
@@ -59,3 +59,4 @@ function mostrarDireccionEnMapa() {
             alert('Hubo un error al geocodificar la dirección. Por favor, inténtalo de nuevo más tarde.');
         });
 }
+

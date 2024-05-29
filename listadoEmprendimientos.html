@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Emprendimientos</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+	<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="libs/jquery-3.7.1.min.js"></script>
+    <style>
+        .container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .card {
+            width: 90%;
+            max-width: 1200px;
+            height: 500px; /* Aproximadamente 50 cm */
+            margin: 10px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .card-info {
+            width: 60%;
+        }
+
+        .card-map {
+            width: 40%;
+            height: 100%;
+        }
+
+        .card h2 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .card p {
+            margin: 5px 0;
+            font-size: 16px;
+        }
+
+        .card h3 {
+            margin: 5px 0;
+            font-size: 18px;
+        }
+
+        .card img {
+            max-width: 100%;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="container" id="listado">
+        <!-- Las tarjetas se cargarán aquí -->
+    </div>
+
+    <script src="talleres.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const contenedor = document.getElementById('listado');
+
+            talleres_fisicos.forEach((emprendimiento, id) => {
+
+                const card = document.createElement('div');
+                card.className = 'card';
+
+                const infoDiv = document.createElement('div');
+                infoDiv.className = 'card-info';
+
+                const nombre = document.createElement('h2');
+                nombre.textContent = emprendimiento.nombre;
+
+                const imagen = document.createElement('img');
+                imagen.src = "Imagenes/Papelería bonita 🤩.jpg"; 
+
+                const descripcion = document.createElement('p');
+                descripcion.textContent = `Descripción: ${emprendimiento.descripcion}`;
+
+                const rubro = document.createElement('h3');
+                rubro.textContent = `Rubro: ${emprendimiento.rubro}`;
+
+                const contacto = document.createElement('h3');
+                contacto.textContent = `Contacto: ${emprendimiento.contacto}`;
+
+                const redes = document.createElement('h3');
+                redes.textContent = `Redes Sociales: ${emprendimiento.redes_sociales}`;
+
+                const pago = document.createElement('h3');
+                pago.textContent = `Formas de Pago: ${emprendimiento.formas_de_pago}`;
+
+                const zona_influencia = document.createElement('h3');
+                zona_influencia.textContent = `Zona de Influencia: ${emprendimiento.zona_influencia}`;
+
+                const restriccion = document.createElement('h3');
+                restriccion.textContent = `Restricciones: ${emprendimiento.restricciones}`;
+
+                infoDiv.appendChild(nombre);
+                infoDiv.appendChild(imagen);
+                infoDiv.appendChild(descripcion);
+                infoDiv.appendChild(rubro);
+                infoDiv.appendChild(contacto);
+                infoDiv.appendChild(redes);
+                infoDiv.appendChild(pago);
+                infoDiv.appendChild(zona_influencia);
+                infoDiv.appendChild(restriccion);
+
+                card.appendChild(infoDiv);
+
+                if (emprendimiento.tiene_comercio && emprendimiento.direccion_disponible) {
+                    const direccion = document.createElement('h3');
+                    direccion.textContent = `Direccion: ${emprendimiento.direccion}`;
+
+                    const horario = document.createElement('h3');
+                    horario.textContent = `Horarios: ${emprendimiento.horario}`;
+
+                    const localidad = document.createElement('h3');
+                    localidad.textContent = `Localidad: ${emprendimiento.localidad}`;
+
+                    infoDiv.appendChild(direccion);
+                    infoDiv.appendChild(horario);
+                    infoDiv.appendChild(localidad);
+
+                    const mapDiv = document.createElement('div');
+                    mapDiv.className = 'card-map';
+                    card.appendChild(mapDiv);
+
+                    setTimeout( () => {const map = L.map(mapDiv).setView([-34.523013308639, -58.70045616768699], 14);
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
+                        maxZoom: 19,
+                    }).addTo(map);
+
+                    L.marker([-34.523013308639, -58.70045616768699]).addTo(map)
+                        .bindPopup(emprendimiento.nombre)
+                        .openPopup()}, 1)
+
+                    // setTimeout( () => {const map = L.map(mapDiv).setView([-34.523013308639, -58.70045616768699], 14);
+                    // mostrarDireccionEnMapa(map, direccion)}, 1)
+                
+                }
+
+                contenedor.appendChild(card);
+            });
+        });
+    </script>
+    </script>
+    <script src="mapa.js"></script>
+</body>
+</html>
