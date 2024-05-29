@@ -1,54 +1,49 @@
-// Inicializar el mapa
-var map = L.map('map').setView([-34.523013308639, -58.70045616768699], 14); // Coordenadas de la Universidad Nacional de General Sarmiento
 
-// Añadir una capa de mapa base
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
-    maxZoom: 19,
-}).addTo(map);
+// // Inicializar mapa
+// var mapa2 = L.map('card-map').setView([-34.523013308639, -58.70045616768699], 14); // Coordenadas de la Universidad Nacional de General Sarmiento
 
-// Añadir un marcador
-L.marker([-34.523013308639, -58.70045616768699]).addTo(map)
-    .bindPopup('Universidad Nacional de General Sarmiento')
-    .openPopup();
+// // Añadir una capa de mapa base
+// L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+//     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
+//     maxZoom: 19,
+// }).addTo(mapa2);
+
+// // Añadir un marcador
+// L.marker([-34.523013308639, -58.70045616768699]).addTo(mapa2)
+//     .bindPopup('Universidad Nacional de General Sarmiento')
+//     .openPopup();
+
+
 
 // Variable global para almacenar el marcador actual
 var currentMarker;
 
-
 // Función para geocodificar la dirección y mostrarla en el mapa
 // Esta funcion entra segunda despues de normalizar, para buscar las coordenadas en el mapa.
-// Esta funcion es exclusiva del normalizador.
-function mostrarDireccionEnMapa() {
-    var direccion = document.getElementById('direccionComercioNormalizado').value;
+function mostrarEmprendimientoEnMapa(mapa2, direccion) {
+    // var direccion = document.getElementById('direccionComercioNormalizado').value;
 
     if (!direccion) {
         alert('Seleccione una dirección');
         return;
     }
-
     // URL de la API de geocodificación de USIG
     var apiUrl = 'http://servicios.usig.buenosaires.gob.ar/normalizar?direccion=' + encodeURIComponent(direccion);
-
     fetch(apiUrl)
         .then(response => response.json())
         .then(data => {
             if (data.direccionesNormalizadas && data.direccionesNormalizadas.length > 0) {
                 var direccionNormalizada = data.direccionesNormalizadas[0];
-
                 // Obtener las coordenadas de la dirección normalizada
                 var coordenadas = L.latLng(direccionNormalizada.coordenadas.y, direccionNormalizada.coordenadas.x);
-
                 // Mover el mapa a las coordenadas de la dirección normalizada
-                map.setView(coordenadas, 12);
-
+                mapa2.setView(coordenadas, 12);
                 // Si ya existe un marcador, eliminarlo
                 if (currentMarker) {
-                    map.removeLayer(currentMarker);
+                    mapa2.removeLayer(currentMarker);
                 }
-
                 // Añadir un marcador en la dirección normalizada
-                currentMarker = L.marker(coordenadas).addTo(map)
+                currentMarker = L.marker(coordenadas).addTo(mapa2)
                     .bindPopup("espacio fisico del colaborador!!<br>" + direccionNormalizada.direccion)
                     .openPopup();
             } else {
@@ -60,4 +55,3 @@ function mostrarDireccionEnMapa() {
             alert('Hubo un error al geocodificar la dirección. Por favor, inténtalo de nuevo más tarde.');
         });
 }
-

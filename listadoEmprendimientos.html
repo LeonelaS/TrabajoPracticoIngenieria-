@@ -1,79 +1,30 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Listado de Emprendimientos</title>
+    <link rel="stylesheet" href="styleEmprendimiento.css">
+
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-	<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script src="libs/jquery-3.7.1.min.js"></script>
-    <style>
-        .container {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .card {
-            width: 90%;
-            max-width: 1200px;
-            height: 500px; /* Aproximadamente 50 cm */
-            margin: 10px;
-            padding: 20px;
-            border: 1px solid #ccc;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-        }
-
-        .card-info {
-            width: 60%;
-        }
-
-        .card-map {
-            width: 40%;
-            height: 100%;
-        }
-
-        .card h2 {
-            margin: 0;
-            font-size: 24px;
-        }
-
-        .card p {
-            margin: 5px 0;
-            font-size: 16px;
-        }
-
-        .card h3 {
-            margin: 5px 0;
-            font-size: 18px;
-        }
-
-        .card img {
-            max-width: 100%;
-            width: 200px;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 10px;
-        }
-
-        
-    </style>
 </head>
+
 <body>
     <div class="container" id="listado">
         <!-- Las tarjetas se cargarán aquí -->
     </div>
 
+    <!-- Incluir los archivos JS de Leaflet -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="mapaDeEmprendimiento.js"></script>
     <script src="talleres.js"></script>
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const contenedor = document.getElementById('listado');
 
             talleres_fisicos.forEach((emprendimiento, id) => {
-
                 const card = document.createElement('div');
                 card.className = 'card';
 
@@ -84,7 +35,7 @@
                 nombre.textContent = emprendimiento.nombre;
 
                 const imagen = document.createElement('img');
-                imagen.src = "Imagenes/Papelería bonita 🤩.jpg"; 
+                imagen.src = "Imagenes/Papelería bonita 🤩.jpg";
 
                 const descripcion = document.createElement('p');
                 descripcion.textContent = `Descripción: ${emprendimiento.descripcion}`;
@@ -135,28 +86,43 @@
 
                     const mapDiv = document.createElement('div');
                     mapDiv.className = 'card-map';
-                    card.appendChild(mapDiv);
+                    // mapDiv.id = `card-map-${emprendimiento.id}`;
+                    mapDiv.id = 'card-map';
 
-                    setTimeout( () => {const map = L.map(mapDiv).setView([-34.523013308639, -58.70045616768699], 14);
+                    // Inicializar mapa
+                    var mapa2 = L.map('map').setView([-34.523013308639, -58.70045616768699], 14); // Coordenadas de la Universidad Nacional de General Sarmiento
+
+                    // Añadir una capa de mapa base
                     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
                         maxZoom: 19,
-                    }).addTo(map);
+                    }).addTo(mapa2);
 
-                    L.marker([-34.523013308639, -58.70045616768699]).addTo(map)
-                        .bindPopup(emprendimiento.nombre)
-                        .openPopup()}, 1)
+                    // Añadir un marcador
+                    L.marker([-34.523013308639, -58.70045616768699]).addTo(mapa2)
+                        .bindPopup('Universidad Nacional de General Sarmiento')
+                        .openPopup();
 
-                    // setTimeout( () => {const map = L.map(mapDiv).setView([-34.523013308639, -58.70045616768699], 14);
-                    // mostrarDireccionEnMapa(map, direccion)}, 1)
-                
+                    card.appendChild(mapDiv);
+
+                    // setTimeout(() => {
+                    //     const mapa2 = L.map(mapDiv.id).setView(emprendimiento.posicion, 14);
+                    //     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    //         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
+                    //         maxZoom: 19,
+                    //     }).addTo(mapa2);
+
+                    //     L.marker(emprendimiento.posicion).addTo(mapa2)
+                    //         .bindPopup(emprendimiento.nombre)
+                    //         .openPopup();
+                    // }, 1);
                 }
 
                 contenedor.appendChild(card);
             });
         });
     </script>
-    </script>
-    <script src="mapa.js"></script>
+
 </body>
+
 </html>
