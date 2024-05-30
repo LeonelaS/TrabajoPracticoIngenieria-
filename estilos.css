@@ -1,0 +1,178 @@
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    margin-bottom: 100px;
+  }
+  
+  header {
+    position: fixed;
+    width: 100%;
+    height: 100px;
+  }
+  
+  .logoInicio {
+    width: 130px;
+    height: 130px;
+  }
+  
+  .busqueda {
+    display: flex;
+    justify-content: center;
+    margin-top: -80px;
+  }
+  
+  .estiloBarra {
+    width: 400px;
+    height: 40px;
+    border-radius: 20px;
+  }
+  
+  .botones {
+    display: flex;
+    justify-content: right;
+    margin-top: -40px;
+  }
+  
+  .estiloBoton {
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+    margin-left: 7px;
+    margin-right: 7px;
+    background-color: #9ec8b9;
+  }
+  
+  .desplegable {
+    display: flex;
+    justify-content: left;
+    margin-top: -40px;
+    margin-left: 220px;
+  }
+  
+  .estiloDesplegable {
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    font-size: 16px;
+    border-style: double;
+    border-radius: 20px;
+    border-width: 4px;
+    border-color: #1b4242;
+    background-color: #9ec8b9;
+  }
+  
+  .presentacion {
+    display: flex;
+    justify-content: center;
+    background-color: #092635;
+    width: 800px;
+    height: 450px;
+    margin-top: 70px;
+    margin-left: 500px;
+    border-radius: 20px;
+  }
+  
+  h2 {
+    font-size: 30px;
+    text-align: left;
+    margin-left: 20px;
+    opacity: 80%;
+    color: aliceblue;
+    text-shadow: #1b4242;
+  }
+  
+  .textoEstilo {
+    font-size: 25px;
+    text-align: justify;
+    margin-top: 100px;
+    margin-right: 30px;
+    color: aliceblue;
+  }
+  
+  .imgItem {
+    max-width: 100%;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .destacado {
+    width: 40px;
+    height: 40px;
+    margin-top: -40px;
+  }
+  
+  .contenedor {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 150px;
+  }
+  
+  .item {
+    border-radius: 10px;
+    width: 400px;
+  }
+  
+  .item:hover {
+    box-shadow: 0 10px 20px white;
+  }
+  
+  .infoComercio {
+    padding: 15px 30px;
+    background-color: #5c8374;
+    overflow: hidden;
+    border-end-end-radius: 10px;
+  }
+  
+  h5 {
+    text-align: center;
+    font-size: 16px;
+  }
+  
+  .seccionDestacado {
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 80px;
+  }
+  
+  .piePagina {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+  
+    background-color: #5c8374;
+    padding: 10px;
+  }
+  
+  .textoFooter {
+    text-align: center;
+    font-family: "Lora" sans-serif;
+    color: aliceblue;
+    font-weight: 400px;
+    font-size: 15px;
+    margin-top: 20px;
+  }
+  
+  .registrarse {
+    margin-top: -5%;
+    margin-left: 2%;
+    width: 500px;
+    height: 10px;
+    text-size-adjust: 24px;
+    font-size: 24px;
+    color: aliceblue;
+  }
+
+  .a {
+    margin-right: 5px;
+    margin-left: 5px;
+  }

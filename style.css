@@ -44,7 +44,7 @@ html {
   background-color: blanchedalmond;
   text-shadow: #3b3b50;
   font-style: italic;
-  font-size: x-large;
+  font-size: 40px;
   padding: 5px 10px; /* Ajusta el espacio alrededor del texto */
   border-radius: 10px; /* Añade bordes redondeados */
 }
