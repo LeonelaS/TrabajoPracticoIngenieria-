@@ -8,9 +8,9 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 // Añadir un marcador
-// L.marker([-34.523013308639, -58.70045616768699]).addTo(map)
-//     .bindPopup('Universidad Nacional de General Sarmiento')
-//     .openPopup();
+L.marker([-34.523013308639, -58.70045616768699]).addTo(map)
+    .bindPopup('Universidad Nacional de General Sarmiento')
+    .openPopup();
 
 // Variable global para almacenar el marcador actual
 var currentMarker;
@@ -18,6 +18,7 @@ var currentMarker;
 
 // Función para geocodificar la dirección y mostrarla en el mapa
 // Esta funcion entra segunda despues de normalizar, para buscar las coordenadas en el mapa.
+// Esta funcion es exclusiva del normalizador.
 function mostrarDireccionEnMapa() {
     var direccion = document.getElementById('direccionComercioNormalizado').value;
 
@@ -59,3 +60,4 @@ function mostrarDireccionEnMapa() {
             alert('Hubo un error al geocodificar la dirección. Por favor, inténtalo de nuevo más tarde.');
         });
 }
+
