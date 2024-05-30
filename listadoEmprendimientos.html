@@ -88,21 +88,29 @@
                     mapDiv.className = 'card-map';
                     card.appendChild(mapDiv);
 
-                    setTimeout( () => {const nuevomap = L.map(mapDiv).setView(emprendimiento.coordenadas, 14);
-                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
-                        maxZoom: 19,
-                    }).addTo(nuevomap);
+                    setTimeout(() => {
+                        const nuevomap = L.map(mapDiv).setView(emprendimiento.coordenadas, 14);
+                        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
+                            maxZoom: 19,
+                        }).addTo(nuevomap);
 
-                    L.marker(emprendimiento.coordenadas).addTo(nuevomap)
-                        .bindPopup(emprendimiento.nombre)
-                        .openPopup()}, 1)
+                        L.marker(emprendimiento.coordenadas).addTo(nuevomap)
+                            .bindPopup(emprendimiento.nombre)
+                            .openPopup()
+                    }, 1)
                 }
 
                 contenedor.appendChild(card);
             });
         });
     </script>
+
+        <div class="home">
+            <a href="inicio.html">Volver a Inicio</a><br>
+            Quiero <a href="login.html">Logiar</a><br>
+            Quiero hacer la <a href="index.html">Registracion</a>
+        </div>
 
 </body>
 
