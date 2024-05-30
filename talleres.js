@@ -279,13 +279,13 @@ var direcciones_aptas = [
     }
 ]
 
-function agregarTalleresAlMapa() {
-    talleres_fisicos.forEach(taller => {
-        var marker = L.marker(taller.posicion).addTo(map)
-            .bindPopup(`<b>${taller.nombre}</b><br>${taller.descripcion}`);
-    });
-}
+// function agregarTalleresAlMapa() {
+//     talleres_fisicos.forEach(taller => {
+//         var marker = L.marker(taller.posicion).addTo(map)
+//             .bindPopup(`<b>${taller.nombre}</b><br>${taller.descripcion}`);
+//     });
+// }
 
-document.addEventListener('DOMContentLoaded', function() {
-    agregarTalleresAlMapa();
-});
+// document.addEventListener('DOMContentLoaded', function() {
+//     agregarTalleresAlMapa();
+// });
