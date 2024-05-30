@@ -150,7 +150,7 @@
     height: 100px;
   
     background-color: #5c8374;
-    padinng: 10px;
+    padding: 10px;
   }
   
   .textoFooter {
@@ -162,6 +162,16 @@
     margin-top: 20px;
   }
   
+  .registrarse {
+    margin-top: -5%;
+    margin-left: 2%;
+    width: 500px;
+    height: 10px;
+    text-size-adjust: 24px;
+    font-size: 24px;
+    color: aliceblue;
+  }
+
   .a {
     margin-right: 5px;
     margin-left: 5px;
