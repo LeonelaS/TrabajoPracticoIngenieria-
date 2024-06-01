@@ -1,5 +1,4 @@
 // este funciona, y procesa todas las opciones para pasarselas al html en un arreglo.
-// pero al elegir alguna opcion no pasa nada.
 function buscarDireccionComercio() {
     // Obtener la dirección ingresada por el usuario
     var direccion = document.getElementById('direccion-taller-comercio').value;
