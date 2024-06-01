@@ -1,24 +1,5 @@
 
 var talleres_fisicos = [
-    //FORMATO NUEVO
-    // {
-    //     "id": 1,
-    //     "posicion": "",
-    //     "nombre": "",
-    //     "descripcion": "",
-    //     "rubro": "",
-    //     "contacto": "",
-    //     "redes_sociales": "",
-    //     "formas_de_pago": "",
-    //     "zona_influencia": "",
-    //     "restricciones": "",
-    //     "tiene_comercio": true,
-    //     "direccion":"",
-    //     "horario": "",
-    //     "localidad": "",
-    //     "direccion_disponible": true,
-    //     "imagen_url": ""
-    // }
         {
             "id": 0,
             "posicion": "1",
@@ -31,7 +12,7 @@ var talleres_fisicos = [
             "zona_influencia": "Centro",
             "restricciones": "",
             "tiene_comercio": true,
-            "direccion": "Juan María Gutiérrez 1150",
+            "direccion": "Güemes 176, San Miguel, Provincia de Buenos Aires",
             "horario": "Lunes a Sábado de 12:00 a 22:00",
             "localidad": "Malvinas Argentinas",
             "direccion_disponible": true,
@@ -51,12 +32,12 @@ var talleres_fisicos = [
             "zona_influencia": "Centro",
             "restricciones": "Libre de Gluten",
             "tiene_comercio": true,
-            "direccion": "Juan María Gutiérrez 1150",
+            "direccion": "José León Suárez 2903, Los Polvorines, Provincia de Buenos Aires",
             "horario": "Lunes a Sábado de 12:00 a 22:00",
             "localidad": "Malvinas Argentinas",
             "direccion_disponible": true,
             "imagen_url": "Imagenes/comercio.jpg",
-            "coordenadas": [-34.523013308639, -58.70045616768699]
+            "coordenadas": [-34.514022564805416, -58.70709434799156]
         },
 
         {
@@ -71,12 +52,12 @@ var talleres_fisicos = [
             "zona_influencia": "Ciudad",
             "restricciones": "empanadas!",
             "tiene_comercio": true,
-            "direccion": "Juan María Gutiérrez 1150",
+            "direccion": "Cnel. L. M. Argüero 1, San Miguel, Provincia de Buenos Aires",
             "horario": "Lunes a Sábado de 12:00 a 22:00",
             "localidad": "Malvinas Argentinas",
             "direccion_disponible": true,
             "imagen_url": "Imagenes/empanadas.jpg",
-            "coordenadas": [-34.529013308639, -58.70945616768699]
+            "coordenadas": [-34.528792357133995, -58.70692773264532]
         },
 
         {
@@ -91,12 +72,12 @@ var talleres_fisicos = [
             "zona_influencia": "Ciudad",
             "restricciones": "No traer niños",
             "tiene_comercio": true,
-            "direccion": "Juan María Gutiérrez 1150",
+            "direccion": "Carlos Gardel 1822-1900, San Miguel, Provincia de Buenos Aires",
             "horario": "Lunes a Sábado de 12:00 a 22:00",
             "localidad": "Malvinas Argentinas",
             "direccion_disponible": true,
             "imagen_url": "Imagenes/uñas.jpg",
-            "coordenadas": [-34.529013308639, -58.70945616768699]
+            "coordenadas": [-34.538991244190335, -58.728178461480645]
         },
 
         {
@@ -111,7 +92,7 @@ var talleres_fisicos = [
             "zona_influencia": "Ciudad",
             "restricciones": "",
             "tiene_comercio": true,
-            "direccion": "Juan María Gutiérrez 1150",
+            "direccion": "Urquiza 2722, San Miguel, Provincia de Buenos Aires",
             "horario": "Lunes a Sábado de 12:00 a 22:00",
             "localidad": "Malvinas Argentinas",
             "direccion_disponible": true,
@@ -150,7 +131,7 @@ var talleres_fisicos = [
             "zona_influencia": "Norte",
             "restricciones": "Entrega solo en ciudad",
             "tiene_comercio": true,
-            "direccion": "Av. Gral. Juan Gregorio Lemos 101",
+            "direccion": "José León Suárez 2828, Los Polvorines, Provincia de Buenos Aires",
             "horario": "Lunes a Sábado de 9:00 a 18:00",
             "localidad": "Ciudad",
             "direccion_disponible": true,
@@ -188,7 +169,7 @@ var talleres_fisicos = [
             "zona_influencia": "Oeste",
             "restricciones": "No envíos internacionales",
             "tiene_comercio": true,
-            "direccion": "Juan María Gutiérrez 1150",
+            "direccion": "Velazquéz 2110, Los Polvorines, Provincia de Buenos Aires",
             "horario": "Lunes a Sábado de 9:00 a 19:00",
             "localidad": "Ciudad",
             "direccion_disponible": true,
@@ -207,12 +188,12 @@ var talleres_fisicos = [
             "zona_influencia": "Centro",
             "restricciones": "Solo con cita previa",
             "tiene_comercio": true,
-            "direccion": "Juan María Gutiérrez 1150",
+            "direccion": "RN9, Don Torcuato, Provincia de Buenos Aires",
             "horario": "Lunes a Viernes de 10:00 a 18:00",
             "localidad": "Ciudad",
             "direccion_disponible": true,
             "imagen_url": "Imagenes/salon_belleza.jpg",
-            "coordenadas": [-34.52638190216312, -58.70242501518344]   
+            "coordenadas": [-34.4850299379632, -58.61680482181374]   
         },
         {
             "id": 7,
@@ -226,7 +207,7 @@ var talleres_fisicos = [
             "zona_influencia": "Norte",
             "restricciones": "No disponible para ventas al por mayor",
             "tiene_comercio": true,
-            "direccion": "Juan María Gutiérrez 1150",
+            "direccion": "Don Torcuato, Provincia de Buenos Aires",
             "horario": "Lunes a Sábado de 9:00 a 19:00",
             "localidad": "Ciudad",
             "direccion_disponible": true,
@@ -245,7 +226,7 @@ var talleres_fisicos = [
             "zona_influencia": "Sur",
             "restricciones": "Productos químicos, mantener fuera del alcance de los niños",
             "tiene_comercio": true,
-            "direccion": "Juan María Gutiérrez 1150",
+            "direccion": "Dante Alighieri 2300-2398, Los Polvorines, Provincia de Buenos Aires",
             "horario": "Lunes a Viernes de 8:00 a 17:00",
             "localidad": "Ciudad",
             "direccion_disponible": true,
@@ -278,14 +259,3 @@ var direcciones_aptas = [
         "partido": "CABA"
     }
 ]
-
-// function agregarTalleresAlMapa() {
-//     talleres_fisicos.forEach(taller => {
-//         var marker = L.marker(taller.posicion).addTo(map)
-//             .bindPopup(`<b>${taller.nombre}</b><br>${taller.descripcion}`);
-//     });
-// }
-
-// document.addEventListener('DOMContentLoaded', function() {
-//     agregarTalleresAlMapa();
-// });
