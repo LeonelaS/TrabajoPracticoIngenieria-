@@ -43,5 +43,5 @@ function mostrarMensajeRegistro() {
     // Ocultar el mensaje después de unos segundos
     setTimeout(function () {
         mensajeElement.style.display = "none";
-    }, 1000); // 5000 milisegundos = 5 segundos
+    }, 2000); // 5000 milisegundos = 5 segundos
 }
