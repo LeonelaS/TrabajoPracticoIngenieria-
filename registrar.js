@@ -26,11 +26,99 @@ document.addEventListener('DOMContentLoaded', function () {
     formulario.addEventListener('submit', function (event) {
         event.preventDefault(); // Evitar el envío del formulario
 
-        // Mostrar el mensaje personalizado
-        mostrarMensajeRegistro();
+        // Limpiar mensajes de error
+        var errorElements = document.querySelectorAll('.error');
+        errorElements.forEach(function (el) {
+            el.textContent = '';
+        });
 
-        // Reiniciar los campos de texto
-        formulario.reset();
+        var isValid = true;
+
+        // Validar campos
+        if (document.getElementById('nombre').value.trim() === '') {
+            document.getElementById('error-nombre').textContent = 'El nombre es obligatorio.';
+            isValid = false;
+        }
+
+        var telefono = document.getElementById('telefono').value.trim();
+        if (telefono === '') {
+            document.getElementById('error-telefono').textContent = 'El teléfono es obligatorio.';
+            isValid = false;
+        } else if (!/^\d{10}$/.test(telefono)) {
+            document.getElementById('error-telefono').textContent = 'El teléfono debe tener 10 dígitos.';
+            isValid = false;
+        }
+
+        var email = document.getElementById('email').value.trim();
+        if (email === '') {
+            document.getElementById('error-email').textContent = 'El correo electrónico es obligatorio.';
+            isValid = false;
+        } else if (!/\S+@\S+\.\S+/.test(email)) {
+            document.getElementById('error-email').textContent = 'El correo electrónico no es válido.';
+            isValid = false;
+        }
+
+        if (document.getElementById('horario-desde').value === '' || document.getElementById('horario-hasta').value === '') {
+            document.getElementById('error-horario').textContent = 'El horario es obligatorio.';
+            isValid = false;
+        }
+
+        if (document.getElementById('direccionSinNormalizar').value.trim() === '') {
+            document.getElementById('error-direccion').textContent = 'La dirección es obligatoria.';
+            isValid = false;
+        }
+
+        if (document.getElementById('direccionNormalizada').value === '') {
+            document.getElementById('error-direccionNormalizada').textContent = 'Seleccione una dirección normalizada.';
+            isValid = false;
+        }
+
+        if (document.getElementById('comercio').value === '') {
+            document.getElementById('error-comercio').textContent = 'Seleccione una opción para el comercio físico.';
+            isValid = false;
+        }
+
+        if (document.getElementById('comercio').value === 'si') {
+            if (document.getElementById('nombre-comercio').value.trim() === '') {
+                document.getElementById('error-nombre-comercio').textContent = 'El nombre del comercio es obligatorio.';
+                isValid = false;
+            }
+
+            if (document.getElementById('direccion-taller-comercio').value.trim() === '') {
+                document.getElementById('error-direccionComercioNormalizada').textContent = 'Ingrese la dirección del comercio.';
+                isValid = false;
+            }
+
+            if (document.getElementById('direccionComercioNormalizado').value === '') {
+                document.getElementById('error-direccionComercioNormalizada').textContent = 'Seleccione una dirección normalizada para el comercio.';
+                isValid = false;
+            }
+        }
+
+        if (document.getElementById('emprendimiento').value === '') {
+            document.getElementById('error-emprendimiento').textContent = 'Seleccione una opción para el emprendimiento virtual.';
+            isValid = false;
+        }
+
+        if (document.getElementById('emprendimiento').value === 'si') {
+            if (document.getElementById('nombre-emprendimiento').value.trim() === '') {
+                document.getElementById('error-nombre-emprendimiento').textContent = 'El nombre del emprendimiento es obligatorio.';
+                isValid = false;
+            }
+
+            if (document.getElementById('descripcion').value.trim() === '') {
+                document.getElementById('error-descripcion').textContent = 'La descripción es obligatoria.';
+                isValid = false;
+            }
+        }
+
+        if (isValid) {
+            // Mostrar el mensaje personalizado
+            mostrarMensajeRegistro();
+
+            // Reiniciar los campos de texto
+            formulario.reset();
+        }
     });
 });
 
@@ -43,5 +131,5 @@ function mostrarMensajeRegistro() {
     // Ocultar el mensaje después de unos segundos
     setTimeout(function () {
         mensajeElement.style.display = "none";
-    }, 2000); // 5000 milisegundos = 5 segundos
+    }, 2000); // 2000 milisegundos = 2 segundos
 }

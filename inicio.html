@@ -18,33 +18,27 @@
 
   <img class="logoInicio" src="imagenes/Emprendidos.png" alt="Logo del sitio web emprendidos" />
   <div class="busqueda">
-    <form>
-      <input class="estiloBarra" type="search" placeholder="Buscar emprendimiento... " name="buscar" />
+    <form id="searchForm">
+      <input class="estiloBarra" type="search" placeholder="Buscar emprendimiento... " name="buscar" id="buscar"/>
       <button class="estiloBoton" type="submit">Buscar</button>
     </form>
   </div>
+
+  <script>
+    document.getElementById('searchForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Previene el envío del formulario
+      const query = document.getElementById('buscar').value; // Captura el valor del buscador
+      window.location.href = `listadoEmprendimientos.html?buscar=${encodeURIComponent(query)}`; // Redirige a la página de resultados con la búsqueda
+    });
+  </script>
 
   <div class="botones">
     <form>
       <a class="estiloBoton" href="login.html">
         Iniciar sesión
       </a>
-      <button class="estiloBoton">Registrate</button>
+      <a class="estiloBoton" href="registro.html">Registrate</a>
     </form>
-  </div>
-
-  <div class="desplegable">
-    <select class="estiloDesplegable" name="Rubros">
-      <option value="" disabled selected hidden>Rubros</option>
-      <option>Comida</option>
-      <option>Ropa</option>
-      <option>Muebles</option>
-      <option>Ceramica</option>
-      <option>Artesanías</option>
-      <option>Papelería</option>
-      <option>Belleza</option>
-      <option>Higiene</option>
-    </select>
   </div>
   </header>
 
